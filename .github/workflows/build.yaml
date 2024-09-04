@@ -55,5 +55,4 @@ jobs:
           keep-n-tagged: 3
           delete-untagged: true
           delete-partial-images: true
-          dry-run: true
           token: ${{ secrets.GITHUB_TOKEN }}

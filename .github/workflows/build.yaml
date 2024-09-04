@@ -41,7 +41,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
-        id: push
         uses: docker/build-push-action@v6
         with:
           context: .
@@ -50,9 +49,11 @@ jobs:
           tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
           provenance: false
 
-      - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@v1
+      - name: ghcr.io cleanup action
+        uses: dataaxiom/ghcr-cleanup-action@v1
         with:
-          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
-          subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: true
+          keep-n-tagged: 3
+          delete-untagged: true
+          delete-partial-images: true
+          dry-run: true
+          token: ${{ secrets.GITHUB_TOKEN }}

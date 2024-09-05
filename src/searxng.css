@@ -183,13 +183,13 @@ template {
   display: none;
 }
 
-result-author,
-result-resolution,
-result-format,
-result-filesize,
-result-source,
-result-engine,
-result-url {
+.result-author,
+.result-resolution,
+.result-format,
+.result-filesize,
+.result-source,
+.result-engine,
+.result-url {
   margin: auto;
 }
 

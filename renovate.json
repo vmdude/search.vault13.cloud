@@ -3,9 +3,17 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["searxng/**"],
       "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-(?<build>.*)?$"
     }
-  ]
+  ],
+  "automergeType": "pr",
+  "ignoreTests": true,
+  "platformAutomerge": true,
+  "automergeStrategy": "fast-forward"
 }

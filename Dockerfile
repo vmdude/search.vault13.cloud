@@ -1,4 +1,4 @@
-FROM searxng/searxng:2025.2.2-ab1e895cc
+FROM searxng/searxng:2025.2.3-4ab7984ed
 COPY src/searxng.min.css /usr/local/searxng/searx/static/themes/simple/css/searxng.min.css
 COPY src/background.jpg /usr/local/searxng/searx/static/themes/simple/css/images/background.jpg
 COPY src/searxng.png /usr/local/searxng/searx/static/themes/simple/img/searxng.png

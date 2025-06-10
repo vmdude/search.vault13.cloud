@@ -29,7 +29,7 @@ jobs:
           directory: src
 
       - name: auto commit the minified files
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "bot: Add auto minified files"
 
